@@ -21,7 +21,7 @@ namespace Composite
         public string Name { get => _name; set => _name = value; }
         public int Size { get => _size; set => _size = value; }
         public Component(string name) => Name = name;
-        public virtual void Print(int i=0) => Console.WriteLine(Andr.Tab(i) + Name);
+        public virtual void Print(int i=0) => Console.WriteLine(Andr.Tab(i) + $"{Name}({Size})");
         public virtual void Add(Component component) { }
         public virtual void Remove(Component component) { }
     }
