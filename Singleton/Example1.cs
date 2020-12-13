@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Singleton
 {
-    class OS
+    /*class OS
     {
         private static OS instance;
         public string NameOS { get; private set; }
@@ -25,5 +25,5 @@ namespace Singleton
         {
             OS = OS.GetInstance(nameOS);
         }
-    }
+    }*/
 }
