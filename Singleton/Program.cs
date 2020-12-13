@@ -7,21 +7,18 @@ namespace Singleton
     {
         static void Main(string[] args)
         {
-            Thread myThread = new Thread(() =>
+            (new Thread(() =>
             {
-                Thread.Sleep(190);
-                Computer comp2 = new Computer();
-                comp2.Launch("Windows10");
-                Console.WriteLine("MyComp2" + comp2.OS.NameOS);
-            });
-            myThread.Start();
-            Thread.Sleep(200);
-            Computer computer = new Computer();
-            computer.Launch("Windows7");
-            Console.WriteLine(computer.OS.NameOS);
-            computer.Launch("Windows10");
-            computer.OS = OS.GetInstance("WindowsServer2003"); 
-            Console.WriteLine(computer.OS.NameOS);
+                Comp newComp = new Comp();
+                newComp.Os = OS.GetInstance("Windows8");
+                Console.WriteLine($"in new thread running \"{newComp.Os.Name}\"");
+            })).Start();
+            Thread.Sleep(1);
+            Comp myComp = new Comp();
+            myComp.Launch("Windows10");
+            Console.WriteLine(myComp.Os.Name);
+            myComp.Launch("Windows7");
+            Console.WriteLine(myComp.Os.Name);
             Console.ReadKey();
         }
     }
