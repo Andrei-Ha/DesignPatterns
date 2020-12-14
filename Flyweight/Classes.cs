@@ -10,6 +10,10 @@ namespace Flyweight
     {
         public string Sort { get; set; }
         public string Color { get; set; }
+        public TreeType(string s, string c)
+        {
+            Sort = s; Color = c;
+        } 
     }
     class Tree
     {
@@ -17,18 +21,18 @@ namespace Flyweight
         public int Y { get; set; }
         public TreeType LinkType;
     }
-    class TreeFactory
+    class TypeFactory
     {
         private static List<TreeType> list = new List<TreeType>();
-        public static TreeType GetTree(string sort, string color)
+        public static TreeType GetType(string sort, string color)
         {
             if(list.Where(p=>(p.Color==color && p.Sort==sort)).Count()>0)
             {
                 return list.Where(p => (p.Color == color && p.Sort == sort)).FirstOrDefault();
             }
-            TreeType  newTree = new TreeType() { Color = color, Sort = sort };
-            list.Add(newTree);
-            return newTree;
+            TreeType  newType = new TreeType(sort,color) ;
+            list.Add(newType);
+            return newType;
         }
         public static void ShowAllModel()
         {
@@ -37,18 +41,36 @@ namespace Flyweight
                 Console.WriteLine($"All models: {t.Sort}; {t.Color}\n");
             }
         }
+        public static Dictionary<string, TreeType> dict = new Dictionary<string, TreeType>();
+        public static void LoadBaseModel()
+        {
+            dict.Add("1",new TreeType( "olha", "red"));
+            dict.Add("2", new TreeType("yasen", "gold"));
+            dict.Add("3", new TreeType("pihta", "green"));
+        }
+        public static TreeType GetTreeFromDict(string str)
+        {
+            return dict[str];
+        }
     }
     class Forest
     {
         public List<Tree> forest = new List<Tree>();
         public void PlantTree(int x, int y, string sort, string color)
         {
-            forest.Add(new Tree() { X = x, Y = y, LinkType = TreeFactory.GetTree(sort, color) });
+            forest.Add(new Tree() { X = x, Y = y, LinkType = TypeFactory.GetType(sort, color) });
+        }
+        public void PlantTree(int x, int y , string dict)
+        {
+            if(TypeFactory.GetTreeFromDict(dict)!=null)
+                forest.Add(new Tree() { X = x, Y = y, LinkType = TypeFactory.GetTreeFromDict(dict) });
         }
         public void ShowForest()
         {
+            int i = 1;
             foreach (Tree tr in forest) {
-                Console.WriteLine($"x={tr.X}; y={tr.Y}; {tr.LinkType.Sort}; {tr.LinkType.Color}\n");
+                Console.WriteLine($"{i}:   x={tr.X}; y={tr.Y}; {tr.LinkType.Sort}; {tr.LinkType.Color}\n");
+                i++;
             }
         }
     }
