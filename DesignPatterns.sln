@@ -33,9 +33,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flyweight", "Flyweight\Flyw
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proxy", "Proxy\Proxy.csproj", "{2F038A52-ED14-430F-AB07-544483D63B9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainOfResponsibility", "ChainOfResponsibility\ChainOfResponsibility.csproj", "{3D9A0E94-BA72-4223-9793-1EB3EFE2C782}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChainOfResponsibility", "ChainOfResponsibility\ChainOfResponsibility.csproj", "{3D9A0E94-BA72-4223-9793-1EB3EFE2C782}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command", "Command\Command.csproj", "{6A312E02-DB36-4033-960B-6ACE9757DFA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Command", "Command\Command.csproj", "{6A312E02-DB36-4033-960B-6ACE9757DFA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iterator", "Iterator\Iterator.csproj", "{42E505B4-EDFA-4519-9185-D75019305E19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{6A312E02-DB36-4033-960B-6ACE9757DFA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A312E02-DB36-4033-960B-6ACE9757DFA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A312E02-DB36-4033-960B-6ACE9757DFA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42E505B4-EDFA-4519-9185-D75019305E19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42E505B4-EDFA-4519-9185-D75019305E19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42E505B4-EDFA-4519-9185-D75019305E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42E505B4-EDFA-4519-9185-D75019305E19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +124,7 @@ Global
 		{2F038A52-ED14-430F-AB07-544483D63B9D} = {519D217F-5CC8-4EC5-91F6-FF66C0ADDC42}
 		{3D9A0E94-BA72-4223-9793-1EB3EFE2C782} = {FD2FA7A3-6398-488C-BD21-06604A2C9646}
 		{6A312E02-DB36-4033-960B-6ACE9757DFA9} = {FD2FA7A3-6398-488C-BD21-06604A2C9646}
+		{42E505B4-EDFA-4519-9185-D75019305E19} = {FD2FA7A3-6398-488C-BD21-06604A2C9646}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8B0FA739-AE3C-4732-8F23-2002788FE705}
