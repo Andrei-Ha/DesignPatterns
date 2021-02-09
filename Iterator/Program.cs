@@ -7,6 +7,7 @@ namespace Iterator
     {
         static void Main(string[] args)
         {
+            /*
             IEnumerable actors = new ArrayList(); //new string[] { "first", "second", "third" };
             IEnumerator perechislitel = actors.GetEnumerator();
 
@@ -14,6 +15,11 @@ namespace Iterator
             foreach(int i in numbers)
                 Console.WriteLine(i);
             Console.ReadKey();
+            */
+            Library MyLibrary = new Library();
+            Reader MyReader = new Reader();
+            MyReader.SeeBooks(MyLibrary);
+            Console.Read();
         }
     }
 }
